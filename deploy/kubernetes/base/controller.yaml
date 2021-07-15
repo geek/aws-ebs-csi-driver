@@ -39,6 +39,18 @@ spec:
             - --logtostderr
             - --v=2
           env:
+            - name: AWS_REGION
+              valueFrom:
+                configMapKeyRef:
+                  name: aws-meta
+                  key: region
+                  optional: true
+            - name: AWS_EC2_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: aws-meta
+                  key: endpoint
+                  optional: true
             - name: CSI_ENDPOINT
               value: unix:///var/lib/csi/sockets/pluginproxy/csi.sock
             - name: CSI_NODE_NAME
