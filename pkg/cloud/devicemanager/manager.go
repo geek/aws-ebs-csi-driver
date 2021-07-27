@@ -26,7 +26,7 @@ import (
 	"k8s.io/klog"
 )
 
-const devPreffix = "/dev/xvd"
+const devPreffix = "/dev/sd"
 
 type Device struct {
 	Instance          *ec2.Instance

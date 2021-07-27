@@ -31,8 +31,8 @@ spec:
           tolerationSeconds: 300
       containers:
         - name: ebs-plugin
-          image: k8s.gcr.io/provider-aws/aws-ebs-csi-driver:v1.1.1
-          imagePullPolicy: IfNotPresent
+          image: d0cker/aws-ebs-csi-driver:latest
+          imagePullPolicy: Always
           args:
             # - {all,controller,node} # specify the driver mode
             - --endpoint=$(CSI_ENDPOINT)

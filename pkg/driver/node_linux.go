@@ -50,7 +50,7 @@ func (d *nodeService) findDevicePath(devicePath, volumeID string, partition stri
 	// This is the magic name on which AWS presents NVME devices under /dev/disk/by-id/
 	// For example, vol-0fab1d5e3f72a5e23 creates a symlink at
 	// /dev/disk/by-id/nvme-Amazon_Elastic_Block_Store_vol0fab1d5e3f72a5e23
-	nvmeName := "nvme-Amazon_Elastic_Block_Store_" + strings.Replace(volumeID, "-", "", -1)
+	nvmeName := "scsi-0SPC_EBS_" + strings.Replace(volumeID, "-", "", -1)
 
 	nvmeDevicePath, err := findNvmeVolume(nvmeName)
 	if err != nil {
